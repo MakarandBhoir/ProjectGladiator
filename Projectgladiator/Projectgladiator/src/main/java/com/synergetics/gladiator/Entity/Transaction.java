@@ -1,4 +1,4 @@
-package com.synergetics.Projectgladiator.Entity;
+package com.synergetics.gladiator.Entity;
 
 import java.sql.Date;
 

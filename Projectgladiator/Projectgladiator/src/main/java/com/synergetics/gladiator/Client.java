@@ -1,4 +1,4 @@
-package com.synergetics.Projectgladiator;
+package com.synergetics.gladiator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

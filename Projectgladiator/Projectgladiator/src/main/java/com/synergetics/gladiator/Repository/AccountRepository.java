@@ -1,8 +1,8 @@
-package com.synergetics.Projectgladiator.Repository;
+package com.synergetics.gladiator.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.synergetics.Projectgladiator.Entity.Account;
+import com.synergetics.gladiator.Entity.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 

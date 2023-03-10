@@ -1,4 +1,4 @@
-package com.synergetics.Projectgladiator.Service;
+package com.synergetics.gladiator.Service;
 
 public interface BenefeciaryService {
 	

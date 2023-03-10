@@ -1,4 +1,4 @@
-package com.synergetics.Projectgladiator.Entity;
+package com.synergetics.gladiator.Entity;
 
 import javax.persistence.Entity;
 
