@@ -1,5 +1,5 @@
 package com.synergetics.gladiator.Entity;
-
+// this is comment for git
 import java.util.List;
 
 import javax.persistence.Entity;
