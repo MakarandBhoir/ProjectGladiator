@@ -1,7 +1,6 @@
-package com.synergetics.gladiator.Entity;
+package com.synergetics.Projectgladiator.Entity;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	@Column(unique=true)
-	private long  loginId;
+	private int  loginId;
 	
 	private String bankName;
 	
@@ -37,12 +37,10 @@ public class User {
 	
 	private String dob;
 	
-	private enum userAccStatus { PENDING, ACTIVATED,REJECTED };
-	
-	userAccStatus userstatus;
+	private enum userAccStatus { PENDING, ACTIVATED }
 	
    @OneToOne
-   @JoinColumn(name="accNo")
+   @JoinColumn(name="loginId")
    @Autowired
    private Account account;
    
@@ -51,7 +49,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getLoginId() {
+	public int getLoginId() {
 		return loginId;
 	}
 
@@ -119,22 +117,12 @@ public class User {
 		return account;
 	}
 
-	/*public void setAccount(Account account) {
+	public void setAccount(Account account) {
 		this.account = account;
-	}
-	
-	public userAccStatus getuserAccStatus()
-	{
-	  return userstatus; 	
-	}*/
-	
-	public void setuserAccStatus(userAccStatus userstat)
-	{
-	  userstatus=userstat; 	
 	}
 
 	public User(int loginId, String bankName, int adharNo, String password, String confPwd, String emailId,
-			long phoneNo, String dob, Account account, userAccStatus useraccstatus) {
+			long phoneNo, String dob, Account account) {
 		super();
 		this.loginId = loginId;
 		this.bankName = bankName;
@@ -145,7 +133,6 @@ public class User {
 		this.phoneNo = phoneNo;
 		this.dob = dob;
 		this.account = account;
-		userstatus=useraccstatus;
 	}
 
 	@Override

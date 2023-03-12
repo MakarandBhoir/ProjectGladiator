@@ -1,8 +1,10 @@
 package com.synergetics.gladiator.Service;
 
+import com.synergetics.gladiator.Entity.Account;
+
 public interface AccountService {
 	
-	public long checkBalance(long accNo);
+	public Account addAccount(Account account);
 	
 
 }
