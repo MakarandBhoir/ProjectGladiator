@@ -1,5 +1,6 @@
 package com.synergetics.gladiator.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,7 +34,7 @@ public class Account {
 	
 	@OneToMany(mappedBy="account")
 	@Autowired
-	private List<Benefeciary> beneficiary;
+	private List<Benefeciary> beneficiary=new ArrayList<Benefeciary>();
 	
 	@OneToMany(mappedBy="account")
 	@Autowired
@@ -66,39 +67,27 @@ public class Account {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	/*public List<Benefeciary> getBeneficiary() {
+	public List<Benefeciary> getBeneficiary() {
 		return beneficiary;
 	}
-
 	public void setBeneficiary(List<Benefeciary> beneficiary) {
 		this.beneficiary = beneficiary;
-	}*/
-
-	/*public List<Transaction> getTransactions() {
-		return transactions;
 	}
-
-	public void setTransactions(List<Transaction> transactions) {
-		this.transactions = transactions;
-	}*/
-
 	public Account(long accNo, long balance, User user, List<Benefeciary> beneficiary) {
 		super();
 		this.accNo = accNo;
 		this.balance = balance;
 		this.user = user;
-		//this.beneficiary = beneficiary;
-		//this.transactions = transactions;
+		this.beneficiary = beneficiary;
 	}
-
-	/*@Override
-	public String toString() {
-		return "Account [accNo=" + accNo + ", balance=" + balance + ", user=" + user + ", beneficiary=" + beneficiary
-				+ ", transactions=" + transactions + "]";
-	}*/
-
+	
+	
+	
+	
+}
 
 	
 
-}
+	
+
+

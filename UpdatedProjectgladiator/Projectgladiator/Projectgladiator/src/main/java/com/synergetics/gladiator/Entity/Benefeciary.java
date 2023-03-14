@@ -19,6 +19,7 @@ public class Benefeciary {
 	@Id
 	private long benifaccNo;
 	
+	private String benifName;
 	@ManyToOne
 	@JoinColumn(name="accNo")
 	@Autowired
@@ -36,13 +37,24 @@ public class Benefeciary {
 		return account;
 	}
 
+	
+	public String getBenifName() {
+		return benifName;
+	}
+
+	public void setBenifName(String benifName) {
+		this.benifName = benifName;
+	}
+
 	public void setAccount(Account account) {
 		this.account = account;
 	}
 
-	public Benefeciary(long benifaccNo, Account account) {
+	
+	public Benefeciary(long benifaccNo, String benifName, Account account) {
 		super();
 		this.benifaccNo = benifaccNo;
+		this.benifName = benifName;
 		this.account = account;
 	}
 

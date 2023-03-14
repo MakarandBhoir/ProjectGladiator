@@ -17,4 +17,17 @@ public class AccountServiceImpln implements AccountService {
 	{
 		return accountrepository.save(account);
 	}
+	
+	
+	public long balanceEnquiry(long accNo)
+	{
+				
+//		return accountrepository.findBalance(accNo);
+		
+		Account account=accountrepository.findById(accNo).get();
+		System.out.println(account);
+		System.out.println(account.getBalance());
+		return account.getBalance();
+		
+	}
 }

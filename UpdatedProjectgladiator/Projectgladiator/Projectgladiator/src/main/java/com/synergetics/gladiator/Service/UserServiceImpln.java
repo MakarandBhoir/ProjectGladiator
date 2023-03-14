@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.synergetics.gladiator.Entity.Account;
+import com.synergetics.gladiator.Entity.Benefeciary;
 import com.synergetics.gladiator.Entity.User;
 import com.synergetics.gladiator.Repository.AccountRepository;
 import com.synergetics.gladiator.Repository.UserRepository;
@@ -33,9 +34,10 @@ public class UserServiceImpln implements UserService{
 	}
 	public  User approve(User user, long Id)
 	{
-		//Account account=accountrepository.findById(Id).get();
+		
 		User user1=userrepository.findById(Id).get();
 		user1.setAccount(user.getAccount());
+		user1.setuserAccStatus(user.getuserAccStatus());
 		return userrepository.save(user1);	
 	
 	}
@@ -44,9 +46,14 @@ public class UserServiceImpln implements UserService{
 		User user1=userrepository.findById(loginId).get();
 		if(phoneNo==user1.getPhoneNo())
 		user1.setPassword(user.getPassword());
+		user1.setAccount(user.getAccount());
+		user1.setuserAccStatus(user.getuserAccStatus());
 		return userrepository.save(user1);
 		
 	}
+	
+
+	
 	
     
 	}
